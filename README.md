@@ -11,12 +11,13 @@ There is no installation to speak of; just grab the file and compile it with you
 Here's how you can compile SIOF on a unix box:
 
 ```
-gcc -o siof -Wall -O3 -DNDEBUG siof.c
+gcc -o siof -lm -Wall -O3 -DNDEBUG siof.c
 ```
 
 Please note that some compilers may issue hundreds of warnings; we recommend to add `-Wno-parentheses-equality` for
 Clang and `-D_CRT_SECURE_NO_WARNINGS` for Windows headers (unless you want to hear that `fopen`
-is no longer a reasonable way to open files).
+is no longer a reasonable way to open files). Some compilers link `<math.h>` library automatically, some require explicit 
+option like `-lm` above. 
 
 If you specify high optimization settings as in the example above, be ready for long compilation times. But it's usually worth the wait: the executable is smaller and faster (which is important because the speed was traded for code size).
 
