@@ -1,7 +1,7 @@
 # SIOF (Scheme In One File) - A Truly Minimal Scheme System
                          
 SIOF is a portable interpreter for a subset of the Scheme programming language. 
-It can be built from a single portable C source file [siof.c](https://raw.githubusercontent.com/false-schemers/siof/master/siof.c); 
+It can be built from a single C source file [siof.c](https://raw.githubusercontent.com/false-schemers/siof/master/siof.c); 
 there are no OS- or hardware-specific parts, no compiler-specific tricks, no dependency on platform-specific building tools. There is no distributive to install: just compile the file with your favorite C compiler, link it with the standard C runtime libraries and be done with it.
 
 ## Installation
