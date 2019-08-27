@@ -1,4 +1,4 @@
-# SIOF (Scheme In One File) - A Truly Minimal Scheme System
+# SIOF (Scheme In One File) - A Minimal R5RS Scheme System
                          
 SIOF is a portable interpreter for a subset of the Scheme programming language. 
 It can be built from a single C source file [siof.c](https://raw.githubusercontent.com/false-schemers/siof/master/siof.c); 
@@ -26,9 +26,8 @@ The resulting interpreter has no dependencies and can be run from any location.
 
 ## Scheme Compatibility
 
-SIOF is true to basic Scheme principles -- it features precise garbage collector, supports proper tail recursion, `call/cc`, `dynamic-wind`, and multiple return values. It generally targets R^5RS feature set, but it has the following known limitations and deviations from the standard:
+SIOF is true to basic Scheme principles -- it features precise garbage collector, supports proper tail recursion, `call/cc`, `dynamic-wind`, multiple return values, and has a hygienic macro system. It is mostly R5RS-compatible, but it has the following known limitations and deviations from the standard:
 
-  *  hygienic macro facilities (`define-syntax` & friends) are not implemented
   *  there is a simple `define-macro` facility for S-expression rewriting
   *  `read` and `string->symbol` are case-sensitive
   *  `eval` is single-argument; environment functions are not implemented
@@ -55,4 +54,9 @@ systems. Its #F source code can be found there in `examples` directory:
 [siof.sf](https://raw.githubusercontent.com/false-schemers/sharpF/master/examples/siof.sf)
 
 SIOF's on-the-fly compiler is derived from Marc Feeley's Scheme Interpreter (see `gambit/bench/src/scheme.scm` in the [Gambit Scheme repository](https://github.com/gambit/gambit)). Supporting library code comes from #F's [LibS library](https://raw.githubusercontent.com/false-schemers/sharpF/master/lib/libs.sf).
+
+## Family
+
+Please see [S4IOF](https://github.com/false-schemers/s4iof) repository for a smaller system without hygienic macros
+
 
