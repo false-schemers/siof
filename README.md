@@ -28,8 +28,7 @@ The resulting interpreter has no dependencies and can be run from any location.
 
 SIOF is true to basic Scheme principles -- it features precise garbage collector, supports proper tail recursion, `call/cc`, `dynamic-wind`, multiple return values, and has a hygienic macro system. It is mostly R5RS-compatible, but it has the following known limitations and deviations from the standard:
 
-  *  there is a simple `define-macro` facility for S-expression rewriting
-  *  `read` and `string->symbol` are case-sensitive
+   *  `read` and `string->symbol` are case-sensitive
   *  `eval` is single-argument; environment functions are not implemented
   *  fixnums are limited to 24 bits, flonums are doubles
   *  no support for bignums/rational/complex numbers
