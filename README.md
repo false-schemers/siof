@@ -63,7 +63,7 @@ Here are some details on SIOF's interactive Read-Eval-Print-Loop (REPL) and eval
   *  both `import` and `define-library` forms can be entered interactively into REPL
   *  `features` procedure returns `(r7rs exact-closed siof siof-1.0.1)`
   
-Please note that SIOF's interaction environment exposes bindings for all supported R7RS-small procedures and syntax forms directly, so there is no need to use `import`. In order to use `import` forms and `environment` procedure with R7RS-small libraries, you will need to copy the `scheme` folder with .sld files for the libraries to your system and make sure SIOF can locate it (its library search path contains current directory by default and can be extended with the help of `-L` command line option).
+Please note that SIOF's interaction environment exposes bindings for all supported R7RS-small procedures and syntax forms directly, so there is no need to use `import`. In order to use `import` forms and `environment` procedure with R7RS-small libraries, you will need to copy the `scheme` folder with .sld files for the libraries from [here](https://github.com/false-schemers/sharpF/tree/master/int/scheme) to your local system and make sure SIOF can locate it (its library search path contains current directory by default and can be extended with the help of `-L` command line option).
 
 
 ## Origins
@@ -73,7 +73,8 @@ systems. Its #F source code can be found there in `examples` directory:
 
 [siof.sf](https://raw.githubusercontent.com/false-schemers/sharpF/master/examples/siof.sf)
 
-SIOF's on-the-fly compiler is derived from Marc Feeley's Scheme Interpreter (see `gambit/bench/src/scheme.scm` in the [Gambit Scheme repository](https://github.com/gambit/gambit)). Supporting library code comes from #F's [LibS library](https://raw.githubusercontent.com/false-schemers/sharpF/master/lib/libs.sf).
+SIOF's on-the-fly compiler is derived from Marc Feeley's Scheme Interpreter (see `gambit/bench/src/scheme.scm` in the [Gambit Scheme repository](https://github.com/gambit/gambit)). Hygienic macroexpander is derived from Al Petrofsky's alexpander v1.65 (please see the #F source file for the original copyright notice). Supporting library code comes from #F's [LibL library](https://raw.githubusercontent.com/false-schemers/sharpF/master/lib/libl.sf).
+
 
 ## Family
 
