@@ -2,7 +2,7 @@
                          
 SIOF is a portable interpreter for the R7RS Scheme programming language. 
 It can be built from a single C source file [siof.c](https://raw.githubusercontent.com/false-schemers/siof/master/siof.c); 
-there are no OS- or hardware-specific parts, no compiler-specific tricks, no dependency on platform-specific building tools. There is no distributives or packages: just compile the source file with your favorite C compiler, link it with the standard C runtime libraries and be done with it. For some platforms, statically compiled binaries are available (please see [releases](https://github.com/false-schemers/siof/releases)).
+there are no OS- or hardware-specific parts, no compiler-specific tricks, no dependency on platform-specific building tools. There is no distributives or packages: just compile the source file with your favorite C compiler, link it with the standard C runtime libraries and be done with it. For some platforms, precompiled binaries are available (please see [releases](https://github.com/false-schemers/siof/releases)).
 
 ## Installation
 
