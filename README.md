@@ -26,7 +26,7 @@ gcc -o siof -O3 -DNDEBUG siof.c -lm
 If you do that, be ready for long compilation times (actual time varies widely from ~1 minute to more than an hour, depending on the compiler and optimization level). On systems supporting 32-bit applications such as Windows, it may make sense to compile SIOF in 32-bit mode; performance is almost the same, but both the executable and runtime memory footprint are noticeably smaller.
 
 The resulting interpreter has no dependencies (except C runtime and standard -lm math library) and can be run from any location.
-If compiled statically, the resulting executable can be easily moved between systems with the same ABI.
+If compiled statically, it can be easily moved between systems with the same ABI.
 
 
 ## Scheme Compatibility
