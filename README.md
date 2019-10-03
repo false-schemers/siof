@@ -23,7 +23,7 @@ For better performance (up to 3x of the baseline) and smaller executable, you ma
 gcc -o siof -O3 -DNDEBUG siof.c -lm
 ```
 
-If you do that, be ready for long compilation times (actual time varies widely from ~1 minute to more than an hour!). 
+If you do that, be ready for long compilation times (actual time varies widely from ~1 minute to more than an hour, depending on the compiler and optimization level). 
 
 The resulting interpreter has no dependencies (except C runtime and standard -lm math library) and can be run from any location.
 If compiled statically, the resulting executable can be easily moved between systems with the same ABI.
