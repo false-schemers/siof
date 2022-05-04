@@ -835,7 +835,7 @@ static int iportpeekc(obj o) {
 }
 /* closed input ports */
 static void cifree(void *p) {}
-static void ciclose(void *p) {}
+static int ciclose(void *p) { return 0; }
 static int cigetch(void *p) { return EOF; }
 static int ciungetch(int c) { return c; }
 static cxtype_iport_t cxt_iport_closed = {
@@ -857,8 +857,8 @@ sifile_t *sialloc(char *p, void *base) {
 extern sifile_t *sialloc(char *p, void *base);
 static void sifree(sifile_t *fp) { 
   assert(fp); if (fp->base) free(fp->base); free(fp); }
-static void siclose(sifile_t *fp) { 
-  assert(fp); if (fp->base) free(fp->base); fp->base = NULL; fp->p = ""; }
+static int siclose(sifile_t *fp) { 
+  assert(fp); if (fp->base) free(fp->base); fp->base = NULL; fp->p = ""; return 0; }
 static int sigetch(sifile_t *fp) {
   int c; assert(fp && fp->p); if (!(c = *(fp->p))) return EOF; ++(fp->p); return c; }
 static int siungetch(int c, sifile_t *fp) {
@@ -876,8 +876,8 @@ bvifile_t *bvialloc(unsigned char *p, unsigned char *e, void *base) {
 extern bvifile_t *bvialloc(unsigned char *p, unsigned char *e, void *base);
 static void bvifree(bvifile_t *fp) { 
   assert(fp); if (fp->base) free(fp->base); free(fp); }
-static void bviclose(bvifile_t *fp) { 
-  assert(fp); if (fp->base) free(fp->base); fp->base = NULL; fp->p = fp->e = (unsigned char *)""; }
+static int bviclose(bvifile_t *fp) { 
+  assert(fp); if (fp->base) free(fp->base); fp->base = NULL; fp->p = fp->e = (unsigned char *)""; return 0; }
 static int bvigetch(bvifile_t *fp) {
   assert(fp && fp->p && fp->e); return (fp->p >= fp->e) ? EOF : (0xff & *(fp->p)++); }
 static int bviungetch(int c, bvifile_t *fp) {
@@ -926,7 +926,7 @@ static void oportflush(obj o) {
 }
 /* closed output ports */
 static void cofree(void *p) {}
-static void coclose(void *p) {}
+static int coclose(void *p) { return 0; }
 static int coputch(int c, void *p) { return EOF; }
 static int coflush(void *p) { return EOF; }
 static cxtype_oport_t cxt_oport_closed = {
@@ -65700,6 +65700,7 @@ case 2263: /* clo k */
     r += 1; /* shift reg. wnd */
 s_loop_v28786: /* k port */
     (void)(oportputcircular((cx__2311250), (cx__2Acurrent_2Doutput_2Dport_2A), 1));
+    (void)(oportflush((cx__2Acurrent_2Doutput_2Dport_2A)));
     hreserve(hbsz(1+1), 2); /* 2 live regs */
     *--hp = r[1];  
     *--hp = obj_from_case(2263);
