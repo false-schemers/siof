@@ -6005,7 +6005,7 @@ case 0: /* load module */
     { /* cons */ 
     hreserve(hbsz(3), 0); /* 0 live regs */
     *--hp = (mknull());
-    *--hp = (mksymbol(internsym("siof-1.0.1")));
+    *--hp = (mksymbol(internsym("siof-1.0.2")));
     *--hp = obj_from_size(PAIR_BTAG); 
     r[0] = (hendblk(3)); }
     { /* cons */ 
@@ -7247,7 +7247,7 @@ case 0: /* load module */
     *--hp = (mksymbol(internsym("import")));
     *--hp = obj_from_size(PAIR_BTAG); 
     cx__2311233 = (hendblk(3)); }
-    cx__2311241 = (hpushstr(0, newstring("SIOF Scheme Interpreter 1.0.1~%")));
+    cx__2311241 = (hpushstr(0, newstring("SIOF Scheme Interpreter 1.0.2~%")));
     cx__2311247 = (hpushstr(0, newstring("; returning to top level~%")));
     cx__2311250 = (hpushstr(0, newstring("> ")));
     cx__2311255 = (hpushstr(0, newstring("~%")));
@@ -7255,7 +7255,7 @@ case 0: /* load module */
     cx__2311262 = (hpushstr(0, newstring("-x        exit after loading files on the command line~%")));
     cx__2311263 = (hpushstr(0, newstring("-q        suppress greeting~%")));
     cx__2311264 = (hpushstr(0, newstring("Usage: siof [-qx] file ...~%")));
-    cx__2311265 = (hpushstr(0, newstring("siof 1.0.1~%")));
+    cx__2311265 = (hpushstr(0, newstring("siof 1.0.2~%")));
     cx__2311278 = (hpushstr(0, newstring("; loading ~a...~%")));
     cx__2311286 = (hpushstr(0, newstring("cannot open input file ~a~%")));
     cx__2311291 = (hpushstr(0, newstring("-h")));
